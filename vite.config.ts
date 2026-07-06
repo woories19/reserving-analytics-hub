@@ -5,4 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/reserving-analytics-hub/',
+  build: {
+    chunkSizeWarningLimit: 1500, // Suppress warnings for heavy client-side libraries (xlsx, jspdf, html2canvas)
+  }
 })
