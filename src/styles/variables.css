@@ -1,0 +1,147 @@
+/* Apple Premium Design System - macOS Sequoia & iOS 18 Glassmorphism Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=SF+Mono:wght@400;500&display=swap');
+
+:root {
+  /* System Typography Stack */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Inter", sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Inter", sans-serif;
+  --font-mono: "SF Mono", "SFMono-Regular", "JetBrains Mono", Consolas, monospace;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 0.75rem;   /* 12px */
+  --space-lg: 1.25rem;   /* 20px */
+  --space-xl: 1.75rem;   /* 28px */
+  --space-xxl: 2.5rem;   /* 40px */
+
+  /* Desktop-Grade Radii (Apple-like tight/soft corners) */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  
+  /* Transitions */
+  --transition-fast: 0.1s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-normal: 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Light Theme: Apple Silver Ambient Glass */
+:root, [data-theme="light"] {
+  --bg-app: #f5f5f7;
+  /* Soft vibrant gradient behind glass */
+  --bg-ambient: radial-gradient(circle at 10% 20%, rgba(0, 113, 227, 0.04) 0%, transparent 45%),
+                 radial-gradient(circle at 90% 80%, rgba(98, 0, 234, 0.03) 0%, transparent 45%),
+                 #f5f5f7;
+                 
+  --bg-surface: rgba(255, 255, 255, 0.7);
+  --bg-surface-elevated: rgba(255, 255, 255, 0.85);
+  --bg-input: rgba(255, 255, 255, 0.8);
+  
+  --color-primary: #1d1d1f;
+  --color-primary-rgb: 29, 29, 31;
+  --color-secondary: #515154;
+  --color-muted: #86868b;
+  --color-subtle: #d2d2d7;
+  
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-color-hover: rgba(0, 0, 0, 0.16);
+  --border-glass: rgba(255, 255, 255, 0.8);
+
+  --accent-blue: #0071e3;
+  --accent-blue-light: rgba(0, 113, 227, 0.05);
+  --accent-indigo: #5856d6;
+  
+  /* Status Colors */
+  --status-success: #34c759;
+  --status-success-bg: rgba(52, 199, 89, 0.06);
+  --status-success-border: rgba(52, 199, 89, 0.2);
+  
+  --status-warning: #ff9500;
+  --status-warning-bg: rgba(255, 149, 0, 0.06);
+  --status-warning-border: rgba(255, 149, 0, 0.2);
+  
+  --status-error: #ff3b30;
+  --status-error-bg: rgba(255, 59, 48, 0.05);
+  --status-error-border: rgba(255, 59, 48, 0.15);
+  
+  --status-info: #0071e3;
+  --status-info-bg: rgba(0, 113, 227, 0.05);
+  --status-info-border: rgba(0, 113, 227, 0.15);
+
+  /* Shadows (Apple dynamic soft blurs) */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.08);
+  --shadow-glass: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 8px 32px 0 rgba(0, 0, 0, 0.03);
+
+  /* Heatmap Averages (Gradient overlays) */
+  --heatmap-low: rgba(0, 113, 227, 0.02);
+  --heatmap-mid: rgba(0, 113, 227, 0.12);
+  --heatmap-high: rgba(0, 113, 227, 0.22);
+  
+  --highlight-row: rgba(0, 113, 227, 0.02);
+  --highlight-cell-changed: rgba(255, 214, 0, 0.12);
+}
+
+/* Dark Theme: Apple Space Gray / Deep Sequoia Glass */
+[data-theme="dark"] {
+  --bg-app: #000000;
+  --bg-ambient: radial-gradient(circle at 10% 20%, rgba(41, 151, 255, 0.07) 0%, transparent 45%),
+                 radial-gradient(circle at 90% 80%, rgba(191, 90, 242, 0.05) 0%, transparent 45%),
+                 #0a0a0c;
+                 
+  --bg-surface: rgba(28, 28, 30, 0.7);
+  --bg-surface-elevated: rgba(44, 44, 46, 0.75);
+  --bg-input: rgba(44, 44, 46, 0.4);
+  
+  --color-primary: #f5f5f7;
+  --color-primary-rgb: 245, 245, 247;
+  --color-secondary: #a1a1a6;
+  --color-muted: #86868b;
+  --color-subtle: #2c2c2e;
+  
+  --border-color: rgba(255, 255, 255, 0.06);
+  --border-color-hover: rgba(255, 255, 255, 0.12);
+  --border-glass: rgba(44, 44, 46, 0.6);
+
+  --accent-blue: #2997ff;
+  --accent-blue-light: rgba(41, 151, 255, 0.07);
+  --accent-indigo: #bf5af2;
+  
+  /* Status Colors */
+  --status-success: #30d158;
+  --status-success-bg: rgba(48, 209, 88, 0.06);
+  --status-success-border: rgba(48, 209, 88, 0.15);
+  
+  --status-warning: #ff9f0a;
+  --status-warning-bg: rgba(255, 159, 10, 0.06);
+  --status-warning-border: rgba(255, 159, 10, 0.15);
+  
+  --status-error: #ff453a;
+  --status-error-bg: rgba(255, 69, 58, 0.05);
+  --status-error-border: rgba(255, 69, 58, 0.15);
+  
+  --status-info: #2997ff;
+  --status-info-bg: rgba(41, 151, 255, 0.07);
+  --status-info-border: rgba(41, 151, 255, 0.15);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.85);
+  --shadow-glass: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+
+  /* Heatmap Averages (Dark Mode blends) */
+  --heatmap-low: rgba(41, 151, 255, 0.02);
+  --heatmap-mid: rgba(41, 151, 255, 0.12);
+  --heatmap-high: rgba(41, 151, 255, 0.22);
+
+  --highlight-row: rgba(41, 151, 255, 0.03);
+  --highlight-cell-changed: rgba(255, 214, 0, 0.1);
+}
